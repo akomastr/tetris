@@ -302,17 +302,17 @@ class Block_Controller(object):
 
         # calc Evaluation Value
         score = 0
-        score = score + fullLines * 1.0           # try to delete line 
-        score = score - nHoles * 20.0               # try not to make hole   これを10倍にしたらめっちゃスコア上がった
-        score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
-        score = score - absDy * 2.0                # try to put block smoothly
-        score = score - maxDy * 1.0                # maxDy
-        #score = score - maxHeight * 1              # maxHeight
+        score = score + fullLines * 1.5           # try to delete line 
+        score = score - nHoles * 15.0               # try not to make hole   
+        score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
+        score = score - absDy * 1.5                # try to put block smoothly
+        score = score - maxDy * 1.5                # maxDy
+        score = score - maxHeight * 0.5              # maxHeight
         #score = score - stdY * 1.0                 # statistical data
         #score = score - stdDY * 0.01               # statistical data
 
         # print(score, fullLines, nHoles, nIsolatedBlocks, maxHeight, stdY, stdDY, absDy,maxDy)
-        #print(score, fullLines, nHoles, nIsolatedBlocks, maxHeight, absDy, maxDy, BlockMaxY)
+        # print(score, fullLines, nHoles, nIsolatedBlocks, maxHeight, absDy, maxDy, BlockMaxY)
         # print(score, fullLines, nHoles, nIsolatedBlocks, maxHeight, stdY, stdDY, absDy, BlockMaxY)
 
         return score
